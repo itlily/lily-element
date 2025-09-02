@@ -84,6 +84,12 @@ Button组件
  */
 6.play 
 /lily-element/packages/core
+makeInstaller.ts
+export function makeInstaller(componets: plugin[]) {
+  const installer = (app: App) => each(componets, (c) => app.use(c))
+  return installer // plugin install function
+}
+
 index.ts
 
 import components from './components'
